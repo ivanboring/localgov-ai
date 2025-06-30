@@ -44,4 +44,4 @@ if $PECL_UPDATED && sudo /etc/init.d/apache2 status > /dev/null; then
 fi
 
 # Install Postgres.
-source ./devpanel/postgres.sh
+source ./.devpanel/postgres.sh
