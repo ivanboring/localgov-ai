@@ -85,8 +85,12 @@ else
   time drush -n updb
 fi
 
+#== Install demo content.
+time drush en -y localgov_demo
+
 #== Setup AI.
 source ./.devpanel/setup-ai.sh
+
 
 #== Warm up caches.
 echo
