@@ -1,0 +1,11 @@
+_core:
+  default_config_hash: YrTUxvzTPNg-MGx3AZfKs_CxGULRgoZG1gIOhKzehEY
+localgov_base_remove_css: false
+localgov_base_remove_js: false
+localgov_base_add_unpublished_background_colour: true
+localgov_base_add_draft_note_to_unpublished_content: false
+localgov_base_add_archived_note_to_archived_content: false
+localgov_base_header_behaviour: default
+localgov_base_localgov_guides_stacked_heading: false
+localgov_base_localgov_guides_vertical_navigation: true
+localgov_base_mobile_breakpoint_js: '768'

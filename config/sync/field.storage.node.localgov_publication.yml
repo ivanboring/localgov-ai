@@ -1,0 +1,24 @@
+uuid: 1a1fcc6f-43e7-4505-8c9d-57b621584b4c
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+  enforced:
+    module:
+      - localgov_publications
+_core:
+  default_config_hash: wnneI6ZzXFgXXStxuK5u1WmGfwOxFjL-phO5bY4pxuI
+id: node.localgov_publication
+field_name: localgov_publication
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

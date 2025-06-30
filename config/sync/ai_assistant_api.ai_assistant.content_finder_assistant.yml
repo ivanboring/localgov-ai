@@ -1,0 +1,40 @@
+uuid: 1a015f15-d016-4bf2-b2f4-de197451550a
+langcode: en
+status: true
+dependencies: {  }
+id: content_finder_assistant
+label: 'Content Finder Assistant'
+description: 'This helps finding information on the website.'
+system_prompt: ''
+pre_action_prompt: ''
+instructions: "You are an expert on the LocalGov Drupal installation that is for UK councils to inform its citizens.\r\n\r\nWhen the user asks a question, please do a lookup in the rag database and then answer the users questions. Always provide links. If you don't find anything in the RAG database that fits the question, just answer that you are sorry, but can't find anything on the topic.\r\n\r\nOnly give back local links. Answer short, concisely, but with all necessary information. Be factual. \r\n\r\nAll links should be given back in markdown format, so they are clickable."
+allow_history: session_one_thread
+history_context_length: '3'
+error_message: 'I am sorry, something went terribly wrong. Please try to ask me again.'
+specific_error_messages:
+  AiBadRequestException: ''
+  AiRateLimitException: ''
+  AiQuotaException: ''
+  AiSetupFailureException: ''
+  AiRequestErrorException: ''
+llm_provider: litellm
+llm_model: openai/gpt-4.1
+llm_configuration:
+  max_tokens: 4096
+  temperature: 1.0
+  frequency_penalty: 0
+  presence_penalty: 0
+  top_p: 1.0
+actions_enabled: {  }
+roles:
+  emergency_publisher: 0
+  anonymous: 0
+  authenticated: 0
+  localgov_editor: 0
+  localgov_author: 0
+  localgov_contributor: 0
+  localgov_news_editor: 0
+  localgov_user_manager: 0
+  localgov_admin: 0
+use_function_calling: false
+ai_agent: content_finder_assistant

@@ -1,5 +1,5 @@
 if [ -n "${DP_AI_VIRTUAL_KEY:-}" ]; then
-  time drush pm:en -y ai ai_provider_litellm
+  time drush pm:en -y ai ai_provider_litellm ai_agents
   echo
   drush -n key-save litellm_api_key --label="LiteLLM API key" --key-provider=env --key-provider-settings='{
     "env_variable": "DP_AI_VIRTUAL_KEY",
@@ -33,7 +33,11 @@ if [ -n "${DP_AI_VIRTUAL_KEY:-}" ]; then
       "strip_line_breaks": true
     }'
     drush -n cset ai_vdb_provider_postgres.settings password postgres_db_password
-    drush -n cset ai_vdb_provider_postgres.settings host localhost
+    if env | grep -q DDEV_PROJECT; then
+      drush -n cset ai_vdb_provider_postgres.settings host pgvector
+    else
+      drush -n cset ai_vdb_provider_postgres.settings host localhost
+    fi
     drush -n cset ai_vdb_provider_postgres.settings port 5432
     drush -n cset ai_vdb_provider_postgres.settings default_database $DB_NAME
     drush -n cset ai_vdb_provider_postgres.settings username $DB_USER

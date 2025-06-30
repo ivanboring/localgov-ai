@@ -1,0 +1,21 @@
+uuid: 5d232df8-5990-4f18-9f92-7ab0c5937f7f
+langcode: en
+status: true
+dependencies:
+  module:
+    - address
+    - node
+_core:
+  default_config_hash: rFSBPYWV0Wes2mq7fDuc9M1rgv_wPFFLvmWHK0-DFm4
+id: node.localgov_directory_address
+field_name: localgov_directory_address
+entity_type: node
+type: address
+settings: {  }
+module: address
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

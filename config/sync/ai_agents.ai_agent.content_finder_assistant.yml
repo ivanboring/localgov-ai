@@ -1,0 +1,35 @@
+uuid: 73503a08-0e3a-41ac-85a6-7bb3e20c5cb8
+langcode: en
+status: true
+dependencies: {  }
+id: content_finder_assistant
+label: 'Content Finder Assistant'
+description: 'This helps finding information on the website.'
+system_prompt: "You are an expert on the LocalGov Drupal installation that is for UK councils to inform its citizens.\r\n\r\nWhen the user asks a question, please do a lookup in the rag database and then answer the users questions. Always provide links. If you don't find anything in the RAG database that fits the question, just answer that you are sorry, but can't find anything on the topic.\r\n\r\nOnly give back local links. Answer short, concisely, but with all necessary information. Be factual. \r\n\r\nAll links should be given back in markdown format, so they are clickable."
+secured_system_prompt: null
+tools:
+  'ai_search:rag_search': true
+tool_settings: null
+orchestration_agent: true
+triage_agent: false
+max_loops: 3
+default_information_tools: null
+tool_usage_limits:
+  'ai_search:rag_search':
+    index:
+      values:
+        - content_for_ai
+      action: force_value
+      hide_property: 1
+    amount:
+      values:
+        - '10'
+      action: force_value
+      hide_property: 1
+    min_score:
+      values:
+        - '0.2'
+      action: force_value
+      hide_property: 1
+exclude_users_role: false
+masquerade_roles: {  }

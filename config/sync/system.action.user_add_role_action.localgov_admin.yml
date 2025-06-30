@@ -1,0 +1,14 @@
+uuid: be46ed50-79d2-4567-a21b-c9b3ddce0fbe
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.localgov_admin
+  module:
+    - user
+id: user_add_role_action.localgov_admin
+label: 'Add the LocalGov Admin role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: localgov_admin

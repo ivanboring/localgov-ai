@@ -1,0 +1,102 @@
+uuid: d7fb78b0-7be8-4f55-bb0e-64a23483f99a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - field.storage.node.localgov_directory_address
+    - field.storage.node.localgov_directory_job_title
+    - field.storage.node.localgov_directory_phone
+    - search_api.server.content_for_ai
+  module:
+    - node
+id: content_for_ai
+name: 'Content for AI'
+description: ''
+read_only: false
+field_settings:
+  body:
+    label: Body
+    datasource_id: 'entity:node'
+    property_path: body
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.body
+  localgov_directory_address:
+    label: 'Enquiries address'
+    datasource_id: 'entity:node'
+    property_path: localgov_directory_address
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.localgov_directory_address
+  localgov_directory_job_title:
+    label: 'Contact job title'
+    datasource_id: 'entity:node'
+    property_path: localgov_directory_job_title
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.localgov_directory_job_title
+  localgov_directory_phone:
+    label: 'Contact phone'
+    datasource_id: 'entity:node'
+    property_path: localgov_directory_phone
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.localgov_directory_phone
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: string
+    dependencies:
+      module:
+        - node
+  type:
+    label: 'Content type'
+    datasource_id: 'entity:node'
+    property_path: type
+    type: string
+    dependencies:
+      module:
+        - node
+  url:
+    label: URI
+    property_path: search_api_url
+    type: string
+    configuration:
+      absolute: true
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: false
+      selected:
+        - localgov_directories_page
+        - localgov_directories_venue
+        - localgov_event
+        - localgov_guides_overview
+        - localgov_guides_page
+        - localgov_news_article
+        - localgov_services_page
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  custom_value: {  }
+  entity_type: {  }
+  language_with_fallback: {  }
+  rendered_item: {  }
+tracker_settings:
+  default:
+    indexing_order: lifo
+options:
+  cron_limit: 50
+  delete_on_fail: true
+  index_directly: true
+  track_changes_in_references: true
+server: content_for_ai
