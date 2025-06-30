@@ -12,3 +12,12 @@
 /recipes/
 /vendor/
 /web/
+/.ddev/.env
+/bin
+/LICENSE
+/phpcs.xml.dist
+/phpstan-baseline.php
+/phpstan.neon
+/phpunit.xml.dist
+/README_FRONTEND_TOOLING.md
+/assets

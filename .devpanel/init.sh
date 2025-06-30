@@ -40,6 +40,12 @@ else
   time source .devpanel/composer_setup.sh
   echo
 fi
+#== Install extra composer packages.
+if [ -f .devpanel/composer_extra.sh ]; then
+  echo 'Install extra composer packages.'
+  time source .devpanel/composer_extra.sh
+  echo
+fi
 time composer -n update --no-dev --no-progress
 
 #== Create the private files directory.
@@ -67,7 +73,7 @@ fi
 echo
 if [ -z "$(drush status --field=db-status)" ]; then
   echo 'Install Drupal.'
-  time drush -n si
+  time drush -n si localgov
 
   echo
   echo 'Tell Automatic Updates about patches.'
@@ -79,14 +85,14 @@ else
   time drush -n updb
 fi
 
+#== Setup AI.
+source ./.devpanel/setup-ai.sh
+
 #== Warm up caches.
 echo
 echo 'Run cron.'
 time drush cron
 echo
-echo 'Populate caches.'
-time drush cache:warm
-time .devpanel/warm
 
 #== Finish measuring script time.
 INIT_DURATION=$SECONDS

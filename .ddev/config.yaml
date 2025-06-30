@@ -1,4 +1,4 @@
-name: starter-template
+name: localgov-ai
 type: drupal11
 docroot: web
 php_version: "8.3"

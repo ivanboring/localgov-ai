@@ -7,8 +7,9 @@ set -eu -o pipefail
 cd $APP_ROOT
 
 # Create required composer.json and composer.lock files
-PROJECT=drupal/recommended-project
-composer create-project -n --no-install $PROJECT
+REPO=localgovdrupal/localgov-project:^3.0
+PROJECT=localgov-project
+composer create-project -n --no-install $REPO
 cp -r "${PROJECT#*/}"/* ./
 rm -rf "${PROJECT#*/}" patches.lock.json
 
@@ -26,4 +27,4 @@ composer config scripts.post-drupal-scaffold-cmd \
     'cd web/sites/default && test -z "$(grep '\''include \$devpanel_settings;'\'' settings.php)" && patch -Np1 -r /dev/null < $APP_ROOT/.devpanel/drupal-settings.patch || :'
 
 # Add Drush and Composer Patches.
-composer require -n --no-update drush/drush cweagans/composer-patches:^2@beta
+composer require -n --no-update drush/drush cweagans/composer-patches
