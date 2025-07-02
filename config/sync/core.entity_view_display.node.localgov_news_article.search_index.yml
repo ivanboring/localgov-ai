@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.search_index
+    - field.field.node.localgov_news_article.ai_automator_status
     - field.field.node.localgov_news_article.body
     - field.field.node.localgov_news_article.field_media_image
     - field.field.node.localgov_news_article.localgov_news_categories
@@ -25,14 +26,21 @@ bundle: localgov_news_article
 mode: search_index
 content:
   body:
-    label: hidden
     type: text_default
-    weight: 0
+    label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 0
+    region: content
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
     region: content
 hidden:
+  ai_automator_status: true
   field_media_image: true
+  langcode: true
   links: true
   localgov_news_categories: true
   localgov_news_date: true

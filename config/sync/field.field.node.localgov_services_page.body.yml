@@ -16,8 +16,12 @@ bundle: localgov_services_page
 label: Body
 description: ''
 required: true
-translatable: false
-default_value: {  }
+translatable: true
+default_value:
+  -
+    value: ''
+    summary: a
+    format: wysiwyg
 default_value_callback: ''
 settings:
   display_summary: true

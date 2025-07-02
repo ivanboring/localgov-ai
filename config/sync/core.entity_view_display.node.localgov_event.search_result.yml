@@ -32,6 +32,7 @@ content:
 hidden:
   body: true
   content_moderation_control: true
+  langcode: true
   links: true
   localgov_event_call_to_action: true
   localgov_event_categories: true

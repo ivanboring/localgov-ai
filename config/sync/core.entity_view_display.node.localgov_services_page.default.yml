@@ -23,22 +23,28 @@ bundle: localgov_services_page
 mode: default
 content:
   body:
-    label: hidden
-    weight: 0
     type: text_default
+    label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 0
+    region: content
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
     region: content
   localgov_page_components:
-    weight: 1
+    type: entity_reference_entity_view
     label: hidden
     settings:
-      link: true
       view_mode: default
+      link: true
     third_party_settings: {  }
-    type: entity_reference_entity_view
+    weight: 1
     region: content
 hidden:
+  langcode: true
   links: true
   localgov_common_tasks: true
   localgov_download_links: true

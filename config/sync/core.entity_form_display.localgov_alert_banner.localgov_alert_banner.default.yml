@@ -8,8 +8,10 @@ dependencies:
     - field.field.localgov_alert_banner.localgov_alert_banner.type_of_alert
     - field.field.localgov_alert_banner.localgov_alert_banner.visibility
     - localgov_alert_banner.localgov_alert_banner_type.localgov_alert_banner
+    - workflows.workflow.localgov_alert_banners
   module:
     - condition_field
+    - content_moderation
     - link
     - text
   enforced:
@@ -29,14 +31,27 @@ content:
     settings:
       display_label: true
     third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
   link:
+    type: link_default
     weight: 4
+    region: content
     settings:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
-    type: link_default
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
     region: content
+    settings: {  }
+    third_party_settings: {  }
   remove_hide_link:
     type: boolean_checkbox
     weight: 6
@@ -45,13 +60,13 @@ content:
       display_label: true
     third_party_settings: {  }
   short_description:
+    type: text_textarea
     weight: 3
+    region: content
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-    type: text_textarea
-    region: content
   title:
     type: string_textfield
     weight: 1
@@ -69,17 +84,17 @@ content:
   uid:
     type: entity_reference_autocomplete
     weight: 7
+    region: content
     settings:
       match_operator: CONTAINS
+      match_limit: 10
       size: 60
       placeholder: ''
-      match_limit: 10
-    region: content
     third_party_settings: {  }
   visibility:
+    type: condition_field_default
     weight: 5
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: condition_field_default
-    region: content
 hidden: {  }

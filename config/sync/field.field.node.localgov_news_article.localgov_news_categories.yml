@@ -6,9 +6,16 @@ dependencies:
     - field.storage.node.localgov_news_categories
     - node.type.localgov_news_article
     - taxonomy.vocabulary.localgov_topic
+  module:
+    - ai_translate
   enforced:
     module:
       - localgov_news
+third_party_settings:
+  ai_translate:
+    entity_reference:
+      translate_references: default
+    translate_references: default
 _core:
   default_config_hash: xuwMQKvKM5lmA2G0fzEMbyZ-hHxIds8dclFlBECa4wE
 id: node.localgov_news_article.localgov_news_categories

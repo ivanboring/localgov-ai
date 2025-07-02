@@ -27,6 +27,7 @@ content:
 hidden:
   body: true
   content_moderation_control: true
+  langcode: true
   links: true
   localgov_directory_channel_types: true
   localgov_directory_facets: true

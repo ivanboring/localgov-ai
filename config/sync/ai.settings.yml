@@ -24,3 +24,6 @@ default_providers:
   text_to_speech:
     provider_id: litellm
     model_id: openai/gpt-4o-mini-realtime-preview
+  translate_text:
+    provider_id: chat_translation
+    model_id: openai/gpt-4.1

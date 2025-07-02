@@ -22,6 +22,11 @@ targetEntityType: node
 bundle: localgov_services_page
 mode: search_result
 content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
   search_api_excerpt:
     settings: {  }
     third_party_settings: {  }
@@ -29,6 +34,7 @@ content:
     region: content
 hidden:
   body: true
+  langcode: true
   links: true
   localgov_common_tasks: true
   localgov_download_links: true

@@ -73,6 +73,7 @@ content:
     region: content
 hidden:
   body: true
+  langcode: true
   localgov_publication_content: true
   localgov_publications_banner: true
   localgov_published_date: true

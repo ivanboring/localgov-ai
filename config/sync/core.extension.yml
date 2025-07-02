@@ -6,12 +6,19 @@ module:
   admin_toolbar_tools: 0
   ai: 0
   ai_agents: 0
+  ai_agents_explorer: 0
   ai_api_explorer: 0
   ai_assistant_api: 0
+  ai_automators: 0
   ai_chatbot: 0
+  ai_ckeditor: 0
+  ai_content_suggestions: 0
+  ai_image_alt_text: 0
   ai_provider_litellm: 0
   ai_provider_openai: 0
   ai_search: 0
+  ai_translate: 0
+  ai_validations: 0
   ai_vdb_provider_postgres: 0
   automated_cron: 0
   block: 0
@@ -49,6 +56,7 @@ module:
   field_formatter_class: 0
   field_group: 0
   field_ui: 0
+  field_validation: 0
   file: 0
   filter: 0
   fontawesome: 0
@@ -73,6 +81,7 @@ module:
   jquery_ui_autocomplete: 0
   jquery_ui_menu: 0
   key: 0
+  language: 0
   layout_discovery: 0
   layout_paragraphs: 0
   leaflet: 0
@@ -167,6 +176,7 @@ module:
   viewsreference: 0
   workflows: 0
   pathauto: 1
+  content_translation: 10
   views: 10
   paragraphs: 11
   localgov: 1000

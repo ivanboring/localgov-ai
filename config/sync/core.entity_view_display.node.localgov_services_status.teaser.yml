@@ -22,19 +22,25 @@ bundle: localgov_services_status
 mode: teaser
 content:
   body:
-    label: hidden
     type: text_summary_or_trimmed
-    weight: 101
+    label: hidden
     settings:
       trim_length: 600
     third_party_settings: {  }
+    weight: 101
     region: content
-  links:
-    weight: 100
+  content_moderation_control:
     settings: {  }
     third_party_settings: {  }
+    weight: -20
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
     region: content
 hidden:
+  langcode: true
   localgov_service_status: true
   localgov_service_status_on_landi: true
   localgov_service_status_on_list: true

@@ -28,6 +28,8 @@ settings:
       - bulletedList
       - numberedList
       - '|'
+      - ai_balloon_menu
+      - aickeditor
       - blockQuote
       - drupalInsertImage
       - drupalMedia
@@ -37,6 +39,46 @@ settings:
       - sourceEditing
       - textPartLanguage
   plugins:
+    ai_ckeditor_ai:
+      dialog:
+        autoresize: 'min-width: 600px'
+        height: '750'
+        width: '900'
+        dialog_class: ai-ckeditor-modal
+      plugins:
+        ai_automators_ckeditor:
+          workflows: {  }
+          enabled: false
+        ai_ckeditor_completion:
+          enabled: true
+          provider: litellm__openai/gpt-4.1
+        ai_ckeditor_help:
+          enabled: false
+        ai_ckeditor_modify_prompt:
+          enabled: false
+          provider: litellm__openai/gpt-4.1
+        ai_ckeditor_reformat_html:
+          enabled: false
+          provider: litellm__openai/gpt-4.1
+        ai_ckeditor_spellfix:
+          enabled: false
+          provider: litellm__openai/gpt-4.1
+        ai_ckeditor_summarize:
+          enabled: true
+          provider: litellm__openai/gpt-4.1
+        ai_ckeditor_tone:
+          autocreate: false
+          provider: litellm__openai/gpt-4.1
+          tone_vocabulary: tone_of_voice
+          use_description: 1
+          enabled: true
+        ai_ckeditor_translate:
+          autocreate: false
+          provider: litellm__openai/gpt-4.1
+          translate_vocabulary: localgov_event_category
+          use_description: false
+          language_source: tax
+          enabled: false
     ckeditor5_heading:
       enabled_headings:
         - heading1

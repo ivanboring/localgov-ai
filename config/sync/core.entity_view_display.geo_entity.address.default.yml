@@ -88,8 +88,8 @@ content:
       leaflet_markercluster:
         control: false
         options: '{"spiderfyOnMaxZoom":true,"showCoverageOnHover":true,"removeOutsideVisibleBounds": false}'
-        excluded: ''
         include_path: false
+        excluded: ''
       fullscreen:
         control: false
         options: '{"position":"topleft","pseudoFullscreen":false}'
@@ -99,6 +99,7 @@ content:
       geocoder:
         control: false
         settings:
+          popup: false
           position: topright
           input_size: 25
           providers:
@@ -108,7 +109,6 @@ content:
           min_terms: 4
           delay: 800
           zoom: 16
-          popup: false
           options: ''
     third_party_settings: {  }
     weight: 0
@@ -123,6 +123,7 @@ content:
 hidden:
   created: true
   external_id: true
+  langcode: true
   search_api_excerpt: true
   status: true
   uid: true

@@ -25,6 +25,7 @@ content:
     region: content
 hidden:
   content_moderation_control: true
+  langcode: true
   links: true
   localgov_news_facets: true
   localgov_news_search: true

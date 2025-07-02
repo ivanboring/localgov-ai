@@ -27,6 +27,7 @@ content:
     region: content
 hidden:
   content_moderation_control: true
+  langcode: true
   links: true
   localgov_services_parent: true
   localgov_subsites_banner: true

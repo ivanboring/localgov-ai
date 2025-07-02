@@ -10,9 +10,12 @@ dependencies:
     - field.field.node.localgov_subsites_overview.localgov_subsites_summary
     - field.field.node.localgov_subsites_overview.localgov_subsites_theme
     - node.type.localgov_subsites_overview
+    - workflows.workflow.localgov_editorial
   module:
+    - content_moderation
     - field_group
     - layout_paragraphs
+    - localgov_review_date
     - paragraphs
     - path
 third_party_settings:
@@ -91,6 +94,29 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  localgov_review_date:
+    type: review_date
+    weight: -5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  localgov_service_contacts:
+    type: entity_reference_autocomplete
+    weight: 101
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   localgov_services_parent:
     type: entity_reference_autocomplete
     weight: -1
@@ -146,6 +172,12 @@ content:
   localgov_subsites_theme:
     type: options_select
     weight: 38
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
     region: content
     settings: {  }
     third_party_settings: {  }

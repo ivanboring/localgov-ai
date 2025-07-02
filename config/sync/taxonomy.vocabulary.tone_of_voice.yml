@@ -1,0 +1,9 @@
+uuid: 88be817c-d2b0-4cc6-a47f-ef5e05011fd9
+langcode: en
+status: true
+dependencies: {  }
+name: 'Tone of Voice'
+vid: tone_of_voice
+description: null
+weight: 0
+new_revision: false

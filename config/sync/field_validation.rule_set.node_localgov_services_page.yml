@@ -1,0 +1,47 @@
+uuid: 2ceab222-81d2-47d9-88d3-ec26da268a6a
+langcode: en
+status: true
+dependencies:
+  module:
+    - ai_validations
+name: node_localgov_services_page
+label: 'node localgov_services_page validation'
+entity_type: node
+bundle: localgov_services_page
+field_validation_rules:
+  430f0ac6-f770-48ce-aea7-b3f9f12cfca4:
+    id: ai_text_prompt_constraint_rule
+    title: 'Do not use abbreviations'
+    data:
+      prompt: "Read the following text and figure out if its using abbrevations without explaining them or writing out the full name, that are not known to the common man.\r\n\r\nSome are ok to use, for instance UK, GDP or GPS could be used without explanation, because they are known. Something like GDPR or UKTC is not. \r\n\r\nIf it is using abbrevations without explaining them, answer XFALSE. Otherwise answer XTRUE. Be lenient, just spelling out the words is enough to get XTRUE."
+      message: 'Do not use abbrevations without explaining them.'
+      validate_mode: default
+      provider: litellm__openai/gpt-4.1
+    weight: 2
+    uuid: 430f0ac6-f770-48ce-aea7-b3f9f12cfca4
+    field_name: body
+    column: value
+    error_message: ''
+    roles: {  }
+    condition:
+      field: ''
+      operator: ''
+      value: ''
+  44ba5ef2-018c-4ebb-91e4-a4da7bd98f95:
+    id: ai_text_prompt_constraint_rule
+    title: 'No American English'
+    data:
+      prompt: "You can only answer with XTRUE or XFALSE.\r\nIf parts of the language are using american terms, spellings or sayings you should answer XFALSE. We prefer british english and if its ok answer XTRUE. Be lenient and use XTRUE on debatable topics.\r\n"
+      message: 'Please use British english, not American'
+      validate_mode: default
+      provider: litellm__openai/gpt-4.1
+    weight: 2
+    uuid: 44ba5ef2-018c-4ebb-91e4-a4da7bd98f95
+    field_name: body
+    column: value
+    error_message: ''
+    roles: {  }
+    condition:
+      field: ''
+      operator: ''
+      value: ''
