@@ -35,4 +35,18 @@ settings:
   collapse_minimal: false
   style_file: 'module:ai_chatbot:bard.yml'
   verbose_mode: true
-visibility: {  }
+visibility:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      emergency_publisher: emergency_publisher
+      authenticated: authenticated
+      localgov_editor: localgov_editor
+      localgov_author: localgov_author
+      localgov_contributor: localgov_contributor
+      localgov_news_editor: localgov_news_editor
+      localgov_user_manager: localgov_user_manager
+      localgov_admin: localgov_admin
