@@ -28,7 +28,7 @@ if [ -n "${DP_AI_VIRTUAL_KEY:-}" ]; then
   if command -v psql >/dev/null 2>&1; then
     time drush pm:en -y ai_vdb_provider_postgres ai_search
     drush -n key-save postgres_db_password --label="Postgres DB Password" --key-provider=config --key-provider-settings='{
-      "key_value": "db",
+      "key_value": "db"
     }'
     drush -n cset ai_vdb_provider_postgres.settings password postgres_db_password
     if env | grep -q DDEV_PROJECT; then
