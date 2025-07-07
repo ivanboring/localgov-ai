@@ -94,7 +94,7 @@ source ./.devpanel/setup-ai.sh
 #== If its .ddev then setup the pgvector extension.
 # Check if we are in a DDEV environment.
 if env | grep -q DDEV_PROJECT; then
-  psql -h pgvector -U $DB_USER -d $DB_NAME -c "CREATE EXTENSION IF NOT EXISTS vector;"
+  psql -h pgvector -U db -d db -c "CREATE EXTENSION IF NOT EXISTS vector;"
 fi
 
 #== Warm up caches.

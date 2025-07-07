@@ -27,10 +27,8 @@ if [ -n "${DP_AI_VIRTUAL_KEY:-}" ]; then
   # Check if psql is installed.
   if command -v psql >/dev/null 2>&1; then
     time drush pm:en -y ai_vdb_provider_postgres ai_search
-    drush -n key-save postgres_db_password --label="Postgres DB Password" --key-provider=env --key-provider-settings='{
-      "env_variable": "DB_PASSWORD",
-      "base64_encoded": false,
-      "strip_line_breaks": true
+    drush -n key-save postgres_db_password --label="Postgres DB Password" --key-provider=config --key-provider-settings='{
+      "key_value": "db",
     }'
     drush -n cset ai_vdb_provider_postgres.settings password postgres_db_password
     if env | grep -q DDEV_PROJECT; then
@@ -39,9 +37,15 @@ if [ -n "${DP_AI_VIRTUAL_KEY:-}" ]; then
       drush -n cset ai_vdb_provider_postgres.settings host localhost
     fi
     drush -n cset ai_vdb_provider_postgres.settings port 5432
-    drush -n cset ai_vdb_provider_postgres.settings default_database $DB_NAME
-    drush -n cset ai_vdb_provider_postgres.settings username $DB_USER
+    drush -n cset ai_vdb_provider_postgres.settings default_database db
+    drush -n cset ai_vdb_provider_postgres.settings username db
   fi
+
+  # Get AI Image Alt Text
+  composer require drupal/ai_image_alt_text
+
+  # Flush the cache.
+  drush cr
 
   # Apply the localgov_ai recipe.
   drush recipe ../recipes/localgov_ai
