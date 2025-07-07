@@ -8,7 +8,6 @@
 /logs/*
 /patches.lock.json
 /private/
-/recipes/
 /vendor/
 /web/
 /.ddev/.env
@@ -20,3 +19,4 @@
 /phpunit.xml.dist
 /README_FRONTEND_TOOLING.md
 /assets
+/old_config

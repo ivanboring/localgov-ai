@@ -1,0 +1,30 @@
+name: LocalGov AI
+type: LocalGov
+description: Adds the AI features to LocalGov Drupal.
+install:
+  - ai_image_alt_text
+  - ai_content_suggestions
+  - ai_assistant_api
+  - ai_ckeditor
+  - ai_chatbot
+  - ai_translate
+config:
+  actions:
+    editor.editor.wysiwyg:
+      addItemToToolbar:
+        item_name: aickeditor
+        position: 16
+      simpleConfigUpdate:
+        settings.plugins.ai_ckeditor_ai.dialog.autoresize: 'min-width: 600px'
+        settings.plugins.ai_ckeditor_ai.dialog.height: '750'
+        settings.plugins.ai_ckeditor_ai.dialog.width: '900'
+        settings.plugins.ai_ckeditor_ai.dialog.dialog_class: ai-ckeditor-modal
+        settings.plugins.ai_ckeditor_ai.plugins.ai_ckeditor_completion.enabled: true
+        settings.plugins.ai_ckeditor_ai.plugins.ai_ckeditor_completion.provider: litellm__openai/gpt-4o
+        settings.plugins.ai_ckeditor_ai.plugins.ai_ckeditor_summarize.enabled: true
+        settings.plugins.ai_ckeditor_ai.plugins.ai_ckeditor_summarize.provider: litellm__openai/gpt-4.1
+        settings.plugins.ai_ckeditor_ai.plugins.ai_ckeditor_tone.autocreate: false
+        settings.plugins.ai_ckeditor_ai.plugins.ai_ckeditor_tone.provider: litellm__openai/gpt-4.1
+        settings.plugins.ai_ckeditor_ai.plugins.ai_ckeditor_tone.tone_vocabulary: tone_of_voice
+        settings.plugins.ai_ckeditor_ai.plugins.ai_ckeditor_tone.use_description: 1
+        settings.plugins.ai_ckeditor_ai.plugins.ai_ckeditor_tone.enabled: true

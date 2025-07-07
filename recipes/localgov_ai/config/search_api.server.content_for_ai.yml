@@ -1,0 +1,27 @@
+uuid: f91c2883-5a68-4c70-afce-c44a4ee47edc
+langcode: en
+status: true
+dependencies:
+  module:
+    - ai_search
+id: content_for_ai
+name: 'Content for AI'
+description: ''
+backend: search_api_ai_search
+backend_config:
+  chat_model: litellm__openai/gpt-4.1
+  database: postgres
+  database_settings:
+    database_name: db
+    collection: content
+    metric: cosine_similarity
+  embeddings_engine: litellm__openai/text-embedding-3-small
+  embeddings_engine_configuration:
+    set_dimensions: false
+    dimensions: 1536
+  embedding_strategy: contextual_chunks
+  embedding_strategy_configuration:
+    chunk_size: '3000'
+    chunk_min_overlap: '100'
+    contextual_content_max_percentage: '30'
+  embedding_strategy_details: ''

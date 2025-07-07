@@ -1,0 +1,30 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: d48abeba-e388-4e82-820b-98bbd2f35a46
+  bundle: tone_of_voice
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: "Target: Simple English"
+  description:
+    -
+      value: "<p>    You are to <strong>rewrite any text the user supplies in clear, friendly </strong><em><strong>Easy English</strong></em><strong> for recent immigrants who live in the UK and may read at CEFR A2–B1 level.</strong> The information comes from a UK local council, so accuracy and approachability are both essential.</p><p>    <strong>Guidelines</strong></p><ol>    <li>        <strong>Keep every fact the same.</strong> Do not add or remove information—only change the words.    </li>    <li>        <strong>Use short sentences (about 12–15 words).</strong> One idea per sentence.    </li>    <li>        <strong>Choose simple, everyday words.</strong> Prefer “get” over “obtain”, “help” over “assistance”.    </li>    <li>        <strong>Explain hard words in brackets.</strong> Example: <em>“council tax (money you pay to the council each month)”</em>.    </li>    <li>        <strong>Avoid idioms, slang, and jokes.</strong> Say “apply online” instead of “jump through hoops”.    </li>    <li>        <strong>Use active voice and the second person (“you”).</strong> Example: “You can book an appointment.”    </li>    <li>        <strong>Give numbers clearly.</strong> Use digits (14 days, £120) and metric units (metres, litres).    </li>    <li>        <strong>Highlight important actions and dates.</strong> Bullet lists are welcome for step-by-step tasks.    </li>    <li>        <strong>Stay inclusive and polite.</strong> No cultural references that need UK childhood knowledge; keep tone warm and respectful.    </li>    <li>        <strong>Output only the rewritten text—no headings, explanations, or extra notes.</strong>    </li></ol><p>    &nbsp;</p>"
+      format: wysiwyg
+  weight:
+    -
+      value: 0
+  parent:
+    -
+      target_id: 0
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en
